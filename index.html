@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<!-- O que queremos é que o tamanho da tela seja calculado conforme o tamanho do próprio simulacro. Podemos pedir para que o navegador faça isso por nós, para isso, acrescentamos uma tag de configuração chamada meta com o nome viewport acompanhada do content que deve ser alterado para calcular o tamanho da tela conforme a tela que estamos utilizando, escrevemos também que a largura, width, deve ser igual a largura do device. Para que a largura seja calculada conforme a largura do nosso celular e para evitar o "zoom" automático podemos escrever que a escala inicial deve ser sempre 1, ou seja, "1", initial-scale=1 , conforme o código abaixo:-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="estilos.css">
+	<title>Top Casa Fina Arquitetura</title>
+</head>
+
+<body>
+
+	<!--Criar menu-->
+	<header>
+		<nav class="navbar navbar-default">
+			<div class="container">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+						data-target="#collapse-navbar" aria-expanded="false">
+						<!-- expandido = não, o menu então está fechado-->
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<!--esses spans são para criar o estilo "hamburguinho"-->
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">TopCasaFina Arquitetura</a>
+				</div>
+
+				<div class="collapse navbar-collapse" id="collapse-navbar">
+					<ul class="nav navbar-nav ml-auto">
+						<li class="nav-item active"></li>
+						<li><a href="#sobre-nos">Sobre Nós</a></li>
+						<li><a href="#nossos-projetos">Nossos Projetos</a></li>
+						<li><a href="#depoimentos">Depoimentos</a></li>
+						<li><a href="#video-institucional">Vídeo Institucional</a></li>
+						<li><a href="#contato">Contato</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="container topCasaFina-bannerWrapper">
+			<div class="topCasaFina-banner">
+				<h1>TopCasaFina Arquitetura</h1>
+				<p>Projetando a casa dos sonhos desde 2000 A.C.</p>
+				<button type="button" class="btn btn-primary btn-lg">Contate-nos agora</button>
+			</div>
+		</div>
+	</header>
+
+	<!-- Deixar espaçamento (padidng) entre a imagem e a página. Para acrescentar um espaçamento no CSS, poderíamos acrescentar uma div, acompanhada de um style e o padding acompanhado do tamanho do espaçamento. Mas, utilizamos o Bootstrap para exercer essa função-->
+	<section id="sobre-nos" class="container">
+
+		<h2>Sobre Nós</h2>
+		<div class="row">
+			<!--Inserir imagem-->
+			<img class="img-responsive col-sm-6" src="img/empresa.jpg">
+			<!--fazer com que o layout do texto caiba em uma caixinha, para isso, utilizaremos um "Painel"-->
+			<div class="panel-group col-sm-6" id="paineis-sobre">
+				<!-- "panel-gourp = para deixar os pinéis mais próximos um dos outros (agrupados)."paineis-sobre" = para quando abrir um painel, fechar o outro automaticamente-->
+				<div class="panel panel-default">
+					<!--painel padrão-->
+					<div class="panel-heading" data-toggle="collapse" data-target="#primeiro-paragrafo"
+						data-parent="#paineis-sobre">
+						<!-- data-parent="#paineis-sobre" = para quando abrir um painel, fechar o outro automaticamente-->
+
+						<!--Podemos ainda, acrescentar uma classe de collapse in no p. Se deixarmos apenas assim nada vai acontecer, falta dizermos que estamos usando o Javascript, isto é, temos que importar ele. Navegamos em nossas pastas "topCasaFina > workspace > bootstrap > js" e copiamos o caminho e importamos o Javascript através da tag script. Importamos o Javascript depois que fechamos a tag div, logo depois que terminamos de inserir os títulos e parágrafos do "Sobre Nós":-->
+						<h3 class="panel-title">Desde 1935</h3>
+					</div>
+					<div id="primeiro-paragrafo" class="collapse">
+						<div class="panel-body">
+							<p>Desde 1935 trazendo casas, mansões e prédios lindos para o mundo.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#segundo-paragrafo"
+						data-parent="#paineis-sobre">
+						<h3 class="panel-title">Alegria em colaborar para um mundo mais bonito</h3>
+					</div>
+					<div id="segundo-paragrafo" class="collapse">
+						<div class="panel-body">
+							<p>Preços a partir de R$ 1000,00.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="panel panel-default">
+					<div class="panel-heading" data-toggle="collapse" data-target="#terceiro-paragrafo"
+						data-parent="#paineis-sobre">
+						<h3 class="panel-title">Alegria em colaborar para um mundo mais bonito</h3>
+					</div>
+					<div id="terceiro-paragrafo" class="collapse">
+						<div class="panel-body">
+							<p>Trazendo alegria para as pessoas que têm dinheiro para gastar</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="jumbotron">
+		<div class="container">
+			<h3>Mais de 300 prêmios em design e em conforto.</h3>
+			<p>Mais de 5 milhões de clientes satisfeitos em todo o mundo.</p>
+		</div>
+	</div>
+
+	<section id="nossos-projetos" class="container">
+		<h2>Nossos Projetos</h2>
+
+		<div class="row">
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<!--número de colunas (retirado do Bootstrap)-->
+				<figure class="thumbnail">
+					<!--ajeitar o tamanho da imagem e acrescentar a ela uma borda. Bootstrap criou um recurso próprio para fazer isso. Entrando na aba "Components" podemos verificar o "Thumbnail"-->
+					<!--figure no lugar da div que vai acompanhada da classe thumbnail, pois como a figcaption é usada para mencionar uma figura é preciso falar que temos uma figura-->
+					<img src="img/casa-castelo.png" alt="Foto da Casa-castelo">
+					<!--alt = alnernativa. Colocar uma frase caso a foto não carregue na página-->
+					<figcaption class="caption">
+						<!--figcaption = nova tag do HTML5, deixa o código mais semântico, em vez de usar a tag div-->
+						<h3>Casa Castelo</h3>
+						<p>
+							A Casa Castelo é o último lançamento da TopCasaFina Arquitetura, feita para um monge.
+						</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<figure class="thumbnail">
+					<img src="assets/img/projetos/casa-lago.png" alt="">
+					<figcaption class="caption">
+						<h3>Casa Castelo</h3>
+						<p>
+							A Casa do Lago foi lar de inúmeras pessoas que conheciam o presidente da época.
+						</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<figure class="thumbnail">
+					<img src="assets/img/projetos/mercado-marapira.png" alt="">
+					<figcaption class="caption">
+						<h3>Casa Castelo</h3>
+						<p>
+							O mercado Marapira foi projetado nos mínimos detalhes na arquitetura baseada em frutas.
+						</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<figure class="thumbnail">
+					<img src="assets/img/projetos/palacio-dionisio.png" alt="">
+					<figcaption class="caption">
+						<h3>Palácio Dionísio</h3>
+						<p>
+							O palácio Dionísio foi eleito pela revista 'Grandes palácios' como o palácio mais lindo do
+							mundo.
+						</p>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="col-sm-6 col-md-4 col-lg-3">
+				<figure class="thumbnail">
+					<img src="assets/img/projetos/residencia-ludi.png" alt="">
+					<figcaption class="caption">
+						<h3>Residência Ludi</h3>
+						<p>
+							A residência Ludi foi projetada para ser a mais bela casa de São Paulo pela revista Housing.
+						</p>
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</section>
+
+	<section id="depoimentos">
+
+		<h2 class="container titulo-depoimentos">Depoimentos de Clientes</h2>
+		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<!--é a parte daqueles bullets para selecionar as fotos, também mostra em qual foto está no momento-->
+				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+			</ol>
+
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<!--são as próprias fotos com suas respectivas legendas-->
+				<figure class="item active">
+					<img src="img/depoimentos/depoimento0.png" alt="Depoimento 1">
+					<figcaption class="carousel-caption">
+						<h3>Carina Silvério</h3>
+						<p>Gostei muito!</p>
+					</figcaption>
+				</figure>
+
+				<figure class="item">
+					<img src="img/depoimentos/depoimento1.png" alt="Depoimento 2">
+					<figcaption class="carousel-caption">
+						<h3>Fábio Santos</h3>
+						<p>Excelente lugar!</p>
+					</figcaption>
+				</figure>
+
+				<figure class="item">
+					<img src="img/depoimentos/depoimento2.png" alt="Depoimento 3">
+					<figcaption class="carousel-caption">
+						<h3>Bill Bill</h3>
+						<p>Não gostei pelo fato de não aceitarem gatos.</p>
+					</figcaption>
+				</figure>
+
+			</div>
+
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<!-- são os botões de avançar ou voltar a foto-->
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</section>
+
+	<div class="container">
+		<div class="row">
+			<section id="video" class="col-sm-6">
+
+				<h2>Vídeo Institucional</h2>
+				<div class="embed-responsive embed-responsive-16by9">
+					<!-- retirado da documentação do Bootstrap. Serve para alinhar o título que aparece no vídeo e o botão play-->
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/i_3Pv1AygeI" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						<!--endereço copiado do YouTube em cpmartilhar-incorporar-->
+					</iframe>
+				</div>
+			</section>
+
+			<!--Contato-->
+			<section id="contato" class="col-sm-6">
+				<h2>Contato</h2>
+				<h4>Entre em contato conosco</h4>
+
+				<form>
+					<div class="form-group">
+						<label for="contato-name">Nome:</label>
+						<input id="contato-nome" class="form-control" type="text" placeholder="Seu nome">
+						<!-- pkaceholder serve para deixar no campo a ser preenchido, o que é para digitar ali-->
+					</div>
+
+					<div class="form-group">
+						<label for="contato-email">E-mail</label>
+						<div class="input-group">
+							<div class="input-group-addon">@</div>
+							<input id="contato-email" class="form-control" type="email" placeholder="Seu e-mail">
+							<!-- pkaceholder serve para deixar no campo a ser preenchido, o que é para digitar ali-->
+						</div>
+					</div>
+
+					<div class="grupo-radio">
+						<div class="radio">
+							<label>
+								<input type="radio" name="tipo-pessoa" value="fisica" checked>
+								<!-- radio serve para criar o campo de assinalar em "bolinha"-->
+								<!--name"pessoa": para os dois campos para que quando assinalr uma das opsções, a outra seja desmarcada-->
+								<!--checked: para deixar um dos campos já assinalado quando o usuário acesar a pégina-->
+								Pessoa física
+							</label>
+						</div>
+
+						<div class="radio">
+							<label>
+								<input type="radio" name="tipo-pessoa" value="juridica">
+								Pessoa jurídica
+							</label>
+						</div>
+					</div>
+					<!--
+
+		--><select class="contato-select form-control" name="tipo-solicitacao">
+						<option value="" disabled selected>Tipo de solicitação</option>
+						<option value="casa">Casa</option>
+						<option value="apartamento">Apartamento</option>
+						<option value="mansao">Mansão</option>
+					</select>
+
+					<button type="submit" class="btn btn-primary">Enviar</button>
+
+				</form>
+			</section>
+		</div>
+	</div>
+
+	<!--Endereço-->
+	<footer>
+		<address>
+			<strong>TopCasaFina Arquitetura</strong><br>
+			Rua Vergueiro, 3185, Vila Mariana <br>
+			São Paulo-SP <br>
+			Tel: (11) 5571-2751 ou 5083-3884
+		</address>
+		<address>
+			Email: contato.topcasafina@alura.com.br
+		</address>
+	</footer>
+
+	<script src="assets/js/jquery.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/navbar-animation-fix.js"></script>
+</body>
+
+</html>
